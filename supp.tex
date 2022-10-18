@@ -1,0 +1,53 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[aps,prx,showpacs,floatfix,onecolumn,superscriptaddress,longbibliography,notitlepage]{revtex4-1}
+
+\usepackage{float}
+\usepackage{color}
+\usepackage{bm}
+\usepackage{upgreek}
+\usepackage{todonotes}
+\usepackage{verbatim}
+\usepackage{soul}
+\usepackage{glossaries}
+\usepackage{sidecap}
+\usepackage{hyperref}% add hypertext capabilities
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=red,
+    citecolor=blue,
+}
+
+\def\Q{\ensuremath{\bm{Q}}}
+\def\LSCO{L\MakeLowercase{a}$_{2-x}$S\MakeLowercase{r}$_x$C\MakeLowercase{u}O$_4$}
+
+\begin{document}
+
+\title{Supplemental Material: Template for Physical Review Letters}
+
+\renewcommand{\thepage}{S\arabic{page}} 
+\renewcommand{\thesection}{S\arabic{section}}  
+\renewcommand{\thetable}{S\arabic{table}}  
+\renewcommand{\thefigure}{S\arabic{figure}}
+
+\date{\today}
+
+\maketitle
+
+This document provides a suggested structure for the supplemental materials, which comprises a introductory paragraph that defines the contents of the document followed by separate sections. It can be useful to number  the sections and to prefix all numbers with ``S'' so that the elements of the main and supplemental materials can be easily distinguished.
+
+\section{Growth of \texorpdfstring{L\MakeLowercase{a}$_{2-x}$S\MakeLowercase{r}$_x$C\MakeLowercase{u}O$_4$}{LSCO}}
+Single crystals of \LSCO{} were grown using the flux method as described in Ref.~\cite{Cao2020Quantum}. A measurement of \LSCO{} is shown in Fig.~\ref{fig:supp_fig_growth}. In the section heading, there we needed to include some tricks to ensure lowercase and to escape some warnings.
+
+
+\begin{figure*}
+\includegraphics{supp_fig_growth.pdf}
+\caption{Caption.}
+\label{fig:supp_fig_growth}
+\end{figure*}
+
+\clearpage
+\bibliography{refs}
+\end{document}
+

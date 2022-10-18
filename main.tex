@@ -1,0 +1,107 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[aps,prl,showpacs,floatfix,twocolumn,superscriptaddress,longbibliography]{revtex4-2}
+%
+
+\usepackage{float}
+\usepackage{color}
+\usepackage{bm}
+\usepackage{hyperref}
+\usepackage{todonotes}
+\usepackage{verbatim}
+\usepackage{soul}
+
+\usepackage{glossaries}
+\usepackage{sidecap}
+\usepackage{hyperref}% add hypertext
+\usepackage{verbatim}% this is only needed to show code later capabilities
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=red,
+    citecolor=blue,
+}
+
+% 
+\def\Q{\ensuremath{\bm{Q}}}
+\def\TN{\ensuremath{T_\mathrm{N}}}
+\def\LSCO{La$_{2-x}$Sr$_x$CuO$_4$}
+
+\newacronym{RIXS}{RIXS}{resonant inelastic x-ray scattering}
+
+\begin{document}
+
+\title{Template for Physical Review Letters}
+
+\author{F. Author}\email[]{name@bnl.gov}
+\affiliation{Condensed Matter Physics and Materials Science Department, Brookhaven National Laboratory, Upton, New York 11973, USA}
+
+\author{L. Author}\email[]{othername@bnl.gov}
+\affiliation{Condensed Matter Physics and Materials Science Department, Brookhaven National Laboratory, Upton, New York 11973, USA}
+
+
+\date{\today}
+
+
+\begin{abstract}
+This document provides a template for use for Phys.\ Rev.\ Lett.
+\end{abstract}
+
+\maketitle
+
+This is the body text. Below are various tips and examples. The
+\href{https://markdean.info/groupnotes/writing/}{Writing Papers} section of our group website provides some useful general advice that should also be considered.
+
+\textit{Abbreviations.}---We suggest using the Glossaries latex package to handle abbreviations. This can be convenient when reordering text and it forces some discipline by generating a list of abbreviations at the start of the text. The standard acronym is generated using the \begin{verbatim}  \gls*{RIXS}
+\end{verbatim}
+command [e.g.\ \gls*{RIXS}], but various capitalized and/or pluralized versions can also be auto-generated. See  \href{https://www.overleaf.com/learn/latex/Glossaries}{here} for details. Most chemical formula (e.g. \LSCO{}) are sufficiently short that abbreviations save only a minimal amount of space while forcing the reader to memorize an ambiguous term, so it is usually better to render these in full. \LaTeX{} macros are often useful to avoid too much complicated typing as we did in the previous sentence.
+
+\textit{References.}---Use Bibtex to handle the references. We suggest naming citations by \texttt{<FirstAuthorFamilyName><Year><FirstWordOfTitle>}  and citing them as \cite{Anderson1973Resonating}. This form of name minimizes the chances of getting confused between different papers. Bibtex can also be used to include a reference to the manuscript's Supplemental Materials \cite{supp}. Phys.\ Rev.\ asks that this bibtex entry contains any references that appear in the Supplemental Materials. Take care to correct any errors that might occur in the bibliography. The most common errors relate to capitalization and missing subscripts. If you need {Capitals} surround the relevant part of the .bib file entry with curly braces.
+
+\textit{Headings.}--- Phys.\ Rev.\ Lett.\ does not allow headings, but if you like, you can realize what is effectively the same thing using italics and dashes as we have done for this section.
+
+\textit{Figures.}---Figure~\ref{fig_intro} is inserted to illustrate the addition of a figure. Note that ``Figure'' is written out in full if it is as the start of the sentence, but is abbreviated as Fig.~\ref{fig_intro} if it appears in the middle of a sentence. Give each figure a descriptive name rather than a number and use this term consistently for the filename and label.
+
+\textit{Punctuation.}---When punctuating the document keep in mind that the `.' symbol denotes the end of a sentence and inserts a large space. To mark an abbreviation use .\
+\LaTeX{} includes several types of dash. 
+kinds of dashes: a hyphen (-) for connecting words, en dash (--) to denote a range such as 8--12 apples, em dash (---) for connecting different clauses within a sentence, or a minus sign ($-$) for use in equations. Quotations need to be written using the grave key to the left of 1 on a US keyboard like `this' or ``this" and not like 'this' or "this".
+
+\begin{figure}
+\includegraphics{fig_intro.pdf}
+\caption{This is the figure caption. Sub-panels should be referred to via (a),(b),(c) etc.}
+\label{fig_intro}
+\end{figure}
+
+\emph{Equations.}---Multiple equations usually look much better if the $=$ signs are lined up as
+%
+\begin{eqnarray}
+   f(x) & = & \cos(x)  ,  \\
+   g(x) & = & \exp(x/T_\text{sample})   ,   \\
+   h(x) & = &  \sqrt{x^2+y^2}.
+\end{eqnarray}
+%
+If you would like to leave some whitespace in your .tex document for readability use a percentage sign (\%) to tell \LaTeX{} that you do not want a paragraph break or indentation. Notice that text and other subscripts are converted to Roman (not italic) fonts and that we write $\cos(x)$ not $cos(x)$. When writing a quantity with units $B=5$~T. Vectors, such as the scattering vector \Q{}, should be both bold and italic. 
+
+\emph{Length.}--- Something that is often a bit annoying is the requirement to meet the \href{https://journals.aps.org/authors/length-guide}{length limit} of Phys. Rev. Lett. We suggest to write the first draft with the aim of roughly meeting the length limit. After this, you can review the text to meet the requirements. The \href{https://app.uio.no/ifi/texcount/}{TeX Count website} is useful for counting words  
+
+\emph{Tables.}--- This template provides an example in Tab.~\ref{table_params}. It's usually best to follow this format. 
+\begin{table}[hbt]
+\caption{This is the table caption.}
+\centering
+\begin{ruledtabular}
+\begin{tabular}{ccccccccc}
+Cluster & $U$ & $\Delta$ & $t_{p_{\sigma}d_{x^2-y^2}}$ & $t_{p_{\sigma}p_{\sigma}}$ & TM holes & O holes  \\ 
+\hline
+Ni$_2$O$_7$ & 6.5 & 5.6 & 1.36 & 0.375   & 1.05 & 0.45  \\
+Cu$_2$O$_{11}$  & 9 & 3.4 & 1.17 & 0.625 & 0.76 & 0.74 \\
+\end{tabular}
+\end{ruledtabular}
+\label{table_params}
+\end{table}
+
+\begin{acknowledgments}
+These are the acknowledgments. Although the ``acknowledgments'' section above does not look like it did anything tells the Phys.\ Rev.\ submission system not to count the text towards the word limit, so its worth including on that basis. 
+\end{acknowledgments}
+
+\bibliography{refs}
+\end{document}
